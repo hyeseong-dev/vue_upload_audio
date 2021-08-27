@@ -4,9 +4,14 @@ version: "3"
 
 services:
   nginx:
-    container_name: voice_recognition_front
-    image: nginx
+    container_name: voice-front-nginx
+    image: nginx:latest
     ports:
       - "55526:80"
+    expose: 
+      - 55526
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./dist/:/usr/hsare/nginx/html/
+    stdin_open: true
+    tty: true
