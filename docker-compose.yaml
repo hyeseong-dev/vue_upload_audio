@@ -1,0 +1,12 @@
+# docker-compose.yml
+
+version: "3"
+
+services:
+  nginx:
+    container_name: voice_recognition_front
+    image: nginx
+    ports:
+      - "55526:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
